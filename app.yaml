@@ -1,0 +1,11 @@
+name: farmer-query-assistant
+
+# Optional: Specify environment variables
+# env:
+#   - name: VECTOR_SEARCH_ENDPOINT
+#     value: your-endpoint-name
+
+# Optional: Specify compute configuration
+# resources:
+#   driver:
+#     instance_pool_id: "your-pool-id"
