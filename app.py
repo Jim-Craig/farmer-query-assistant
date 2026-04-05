@@ -62,13 +62,16 @@ Answer:"""
         response = w.serving_endpoints.query(
             name="databricks-meta-llama-3-1-70b-instruct",
             messages=[
-                {"role": "system", "content": "You are a helpful agricultural expert assistant."},
-                {"role": "user", "content": prompt}
+                ChatMessage(role=ChatMessageRole.SYSTEM, content="You are a helpful agricultural expert assistant."),
+                ChatMessage(role=ChatMessageRole.USER, content=prompt)
             ],
             max_tokens=300
         )
 
-        return response.choices[0].message.content
+        if isinstance(response, dict):
+            return response["choices"][0]["message"]["content"]
+        else:
+            return response.choices[0].message.content
 
     except Exception as e:
         print(f"Error: {e}")
