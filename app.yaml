@@ -1,9 +1,7 @@
 name: farmer-query-assistant
 
-# Optional: Specify environment variables
-# env:
-#   - name: VECTOR_SEARCH_ENDPOINT
-#     value: your-endpoint-name
+# Databricks Apps provide OAuth authentication automatically
+# No need to configure DATABRICKS_HOST or DATABRICKS_TOKEN
 
 # Optional: Specify compute configuration
 # resources:
